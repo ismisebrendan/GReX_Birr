@@ -424,7 +424,13 @@ Have not done this yet, this is for setting up grafana for monitoring
 
 
 
+## Communicationg with Raspberry Pi
+We were having great troubles connecting to the raspberry pi (so far it has been the single longest part of this process).
 
+A possible solution we tried was to make the file ```/etc/modprobe.d/ixgbe.conf``` with the contents
+```sh
+options ixgbe allow_unsupported_sfp=1
+```
 
 
 
