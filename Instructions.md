@@ -26,6 +26,12 @@ Set whatever hostname you want for the system, they do recommend naming machines
 sudo hostnamectl set-hostname <your-hostname>
 ```
 
+Install some necessary programmes
+```sh
+sudo apt install net-tools
+sudo apt install openssh-server
+```
+
 ## Networking
 
 Please note: To fully complete this part you must be connected to the GReX itself. However it is not necessary to complete this before you continue.
