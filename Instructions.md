@@ -114,7 +114,7 @@ Enable the DHCP server service
 sudo systemctl enable dnsmasq --now
 ```
 
-After this you must connect to the SNAP, but you can continute beyone this point and come back to it later without any issues, which is what we did.
+After this you must connect to the SNAP, but you can continute beyond this point and come back to it later without any issues, which is what we did.
 
 ### Advanced 10 GbE settings
 This ran without issues, you should be able to follow the steps outlined by the GReX team.
@@ -196,7 +196,7 @@ The below command can be used to remove old dependencies and driver versions tha
 sudo apt-get autoremove
 ```
 
-Reboot, then run ```nvidia-smi`` to see if everyting is installed correctly. You should get something like this
+Reboot, then run ```nvidia-smi``` to see if everyting is installed correctly. You should get something like this
 ```sh
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 555.42.06              Driver Version: 555.42.06      CUDA Version: 12.5     |
@@ -222,7 +222,7 @@ Reboot, then run ```nvidia-smi`` to see if everyting is installed correctly. You
 ```
 
 To your ```~/.bashrc``` add
-```
+```sh
 # CUDA 12.5
 export PATH=/usr/local/cuda-12.5/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.5/lib64
@@ -230,7 +230,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.5/lib64
 Of course, if you use a different version of CUDA you will have to change ```12.5``` to the appropriate number.
 
 To apply this run
-```
+```sh
 source ~/.bashrc
 ```
 
@@ -373,6 +373,7 @@ Then press enter when prompted.
 Then run what Rust prompts you to depending on your system.
 
 ## Python
+
 ### Install python 3.10
 Later, when you go to clone and build the pipline software you may get an error which states that the software requires a python version ```>=3.9,<3.11``` depending on the version of python your Ubuntu install came with. Ours came with version 3.12.3, so it was necessary to downgrade it. We chose the newest version of python 3.10 which was specifically 3.10.14 at the time of writing. The commands below install that version of python, make it the default when using ```python3``` and then build the pipeline software.
 ```sh
@@ -382,7 +383,35 @@ tar -xf Python-3.10.14.tgz
 cd Python-3.10.14
 ./configure --enable-optimizations
 sudo make install
-cd ~/grex
+```
+### Install Poetry
+Poetry is a version control system for python it needs to be installed with
+
+```sh
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+To your ```~/.bashrc``` add
+```sh
+# Poetry
+export PATH="/home/user/.local/bin:$PATH"
+# Fix the "Poetry: Failed to unlock the collection" issue
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+```
+
+
+To apply this run
+```sh
+source ~/.bashrc
+```
+
+## Pipeline software
+To install this run
+
+```sh
+cd
+git clone --recurse-submodules https://github.com/GReX-Telescope/grex
+cd grex
 ./build.sh
 ```
 
