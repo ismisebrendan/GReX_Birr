@@ -47,7 +47,7 @@ You can set up ssh keypairs if you like also.
 
 ### Controlling the SNAP
 
-To turn on/off the SNAP ssh to the Pi and create a bash script called ```snap.sh``` with the following contents
+This is detailed separately from the rest of the instructions [here](https://grex-telescope.github.io/software/operation/). To turn on/off the SNAP ssh to the Pi and create a bash script called ```snap.sh``` with the following contents
 
 ```sh
 #!/bin/env bash
