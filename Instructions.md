@@ -36,19 +36,68 @@ sudo apt install openssh-server
 
 Please note: To fully complete this part you must be connected to the GReX itself. However it is not necessary to complete this before you continue.
 
+### Connecting to the GReX
+There is a Raspberry Pi in the GReX box that you must connect to set up the SNAP board. You should be able to ssh to the pi as normal at the IP ```192.168.0.2```. Note, the instructions say that the username is ```pi``` however the username on the one we received was ```grex-pi``` so be sure to check that and the password on that account.
+
+```sh
+ssh grex-pi@192.168.0.2
+```
+
+You can set up ssh keypairs if you like also.
+
+### Controlling the SNAP
+
+To turn on/off the SNAP ssh to the Pi and create a bash script called ```snap.sh``` with the following contents
+
+```sh
+#!/bin/env bash
+# Usage: ./snap.sh <on|off>
+BASE_GPIO_PATH=/sys/class/gpio
+PWN_PIN=20
+if [ ! -e $BASE_GPIO_PATH/gpio$PWN_PIN ]; then
+  echo "20" > $BASE_GPIO_PATH/export
+fi
+echo "out" > $BASE_GPIO_PATH/gpio$PWN_PIN/direction
+if [[ -z $1 ]];
+then
+    echo "Please pass `on` or `off` as an argument"
+else
+    case $1 in
+    "on" | "ON")
+    echo "0" > $BASE_GPIO_PATH/gpio$PWN_PIN/value
+    ;;
+    "off" | "OFF")
+    echo "1" > $BASE_GPIO_PATH/gpio$PWN_PIN/value
+    ;;
+    *)
+    echo "Please pass `on` or `off` as an argument"
+    exit -1
+    ;;
+    esac
+fi
+exit 0
+```
+
+Make it executable with
+
+```sh
+chmod +x snap.sh
+```
+
+Then run ```sudo ./snap.sh <on|off>``` to turn on and off the SNAP.
+
 ### Netplan
 
 Remove all files from ```/etc/netplan```.
 
-
-Chech which of NetworkManager or networkd is running - the desired situation is taht networkd is running and NetworkManager is disabled.
+Chech which of NetworkManager or networkd is running - the desired situation is that networkd is running and NetworkManager is disabled.
 
 ```sh
 systemctl status NetworkManager
 systemctl status systemd-networkd
 ```
 
-If NetworkManager is running and networkd is not NetworkManager must be disabled and networkd must be enabled.
+If NetworkManager is running and networkd is not NetworkManager must be disabled and networkd must be enabled using the below commands.
 
 ```sh
 sudo systemctl stop NetworkManager
@@ -90,7 +139,10 @@ And then run
 ```sh
 sudo netplan apply
 ```
-again
+again.
+
+Note: At one point after having moved the GPU in our computer the address of the fiber connection changed from ```enp1s0f0``` to ```enp2s0f0```. We are unsure why this happened, but simply changing any occurrences of ```enp1s0f0``` to ```enp2s0f0``` solves any issues you may encounter. 
+
 
 ### DHCP Server
 Install the software
@@ -120,7 +172,42 @@ Enable the DHCP server service
 sudo systemctl enable dnsmasq --now
 ```
 
-After this you must connect to the SNAP, but you can continute beyond this point and come back to it later without any issues, which is what we did.
+After this you must connect to the Pi and then the SNAP, but you can continute beyond this point and come back to it later without any issues, which is what we did.
+
+Connect to the Pi and powercycle the SNAP as described above.
+
+```sh
+ssh grex-pi@192.168.0.2
+```
+
+```sh
+sudo ./snap.sh off
+```
+
+```sh
+sudo ./snap.sh on
+```
+
+Exit the pi and wait a few seconds. Open the ```dnsmasq``` log
+
+```sh
+journalctl -u dnsmasq
+```
+
+Skip to the bottom with Shift + G. There should be a line like the below visible
+
+```sh
+Jul 31 14:47:31 grex-tcd-birr dnsmasq-dhcp[9277]: 1481765933 DHCPDISCOVER(enp1s0f0) 00:10:5a:eb:15:12 no address available
+```
+
+This tells us that the SNAP has a MAC address of ```00:10:5a:eb:15:12``` (yours will be different). Exit the log with ```q``` and go back to ```/etc/dnsmasq.conf``` and uncomment the line ```#dhcp-host=<SNAP_MAC>,192.168.0.3,snap``` replacing ```<SNAP_MAC>``` with the MAC address of your SNAP.
+
+Then restart the dhcp server with
+```sh
+sudo systemctl restart dnsmasq
+```
+
+After waiting for a little while you should now be able to ping the SNAP on ```192.168.0.3```
 
 ### Advanced 10 GbE settings
 This ran without issues, you should be able to follow the steps outlined by the GReX team.
