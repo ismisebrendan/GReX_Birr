@@ -7,4 +7,6 @@ This mostly follows the instructions set out [here](https://grex-telescope.githu
 
 [Labelled_GReX.png](https://github.com/ismisebrendan/GReX_setup/blob/main/Images/Labelled_GReX.png) is a labelled picture of the GReX box containing the electronics.
 
+[Water_test.md](https://github.com/ismisebrendan/GReX_setup/blob/main/Water_test.md) shows the results of testing the watertightness of the GReX antenna.
+
 Thank you to David McKenna and Joe McCauley for helping me with this and debugging the many many errors that I ran into.
