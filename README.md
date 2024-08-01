@@ -5,4 +5,6 @@ This mostly follows the instructions set out [here](https://grex-telescope.githu
 
 [Troubleshooting.md](https://github.com/ismisebrendan/GReX_setup/blob/main/Troubleshooting.md) contains details of the troubleshooting that was done to work out the problems encountered when setting up the GReX.
 
+[Labelled_GReX.png](https://github.com/ismisebrendan/GReX_setup/blob/main/Images/Labelled_GReX.png) is a labelled picture of the GReX box containing the electronics.
+
 Thank you to David McKenna and Joe McCauley for helping me with this and debugging the many many errors that I ran into.
