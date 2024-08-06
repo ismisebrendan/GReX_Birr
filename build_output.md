@@ -1,4 +1,4 @@
-This is the output of running ```build.sh``` in the (pipeline repository)[https://github.com/GReX-Telescope/grex].
+This is the output of running ```build.sh``` in the [pipeline repository](https://github.com/GReX-Telescope/grex).
 
 ```sh
 obs@grex-tcd-birr:~/grex$ ./build.sh
