@@ -508,6 +508,19 @@ cd grex
 ./build.sh
 ```
 
+If there are errors with including files when running ```./build.sh``` the files may exist elsewhere on your system where they are not being included from, to check if this is the case run
+
+```sh
+locate <file_name>
+```
+
+If this is the case you can make soft links between the location the program is looking for the files in and the files using
+
+```sh
+ln -s path/to/actual/file/location path/to/location/program/is/looking/for/file/in
+```
+
+
 Then the ```parallel``` package must be installed.
 ```sh
 sudo apt install parallel -y
