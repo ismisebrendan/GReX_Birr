@@ -520,6 +520,8 @@ If this is the case you can make soft links between the location the program is 
 ln -s path/to/actual/file/location path/to/location/program/is/looking/for/file/in
 ```
 
+Specifically for us the files that were not found initially were ```stdarg.h``` and ```stddef.h```. Locating both of these files gave a number of different locations and files, however the specific files we linked were ```/usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h``` and ```/usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h```.
+
 
 Then the ```parallel``` package must be installed.
 ```sh
