@@ -534,7 +534,7 @@ To run the pipeline software there must be a database file for it to use. By def
 
 More flags can be see by running ```./grex.sh -h```.
 
-
+Trinity appears to have blocked ```time.google.com``` which is the default NTP server for GReX. When calling ```./grex.sh``` the flags ```-st``` or ```--skip_ntp``` can be used to skip NTP synchronisation to avoid this, because otherwise if it cannot contact the server it will crash the program.
 
 ## Databases and Metrics Collection
 ### Docker
