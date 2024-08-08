@@ -2,7 +2,7 @@
 
 Slightly ammended instructions from what is detailed by the GReX team [here](https://grex-telescope.github.io/software/server_setup/).
 
-However I would recommend following that closely, this just details any workarounds I had to figure out for one reason or another, their website has much more details and explanations.
+However I would recommend following that closely, this just details any workarounds I had to figure out for one reason or another, their website has many more details and explanations.
 
 This was done on Ubuntu 24.04 LTS.
 
