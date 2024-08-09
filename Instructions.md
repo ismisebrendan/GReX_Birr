@@ -536,6 +536,10 @@ More flags can be see by running ```./grex.sh -h```.
 
 Trinity appears to have blocked ```time.google.com``` which is the default NTP server for GReX. When calling ```./grex.sh``` the flags ```-st``` or ```--skip_ntp``` can be used to skip NTP synchronisation to avoid this, because otherwise if it cannot contact the server it will crash the program.
 
+The pipline requires the injection of pulses, taken from a ```.dat``` file in ```~/grex/pipeline/fake```. However if an empty ```.dat``` file is provided it doesn't raise any errors.
+
+
+
 ## Databases and Metrics Collection
 ### Docker
 Install Docker as detailed [here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). We used the ```apt``` method, however there are other methods.
