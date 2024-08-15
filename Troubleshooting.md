@@ -57,15 +57,24 @@ Trinity appears to have blocked ```time.google.com``` which is the default NTP s
 
 ### Switch not set up correctly
 
-If, upon running ```iftop -i [port-to-GReX]``` there doesn't appear to be any data flowing between the GReX and the server it might be the case that the switch in the GReX was not configured correctly.
+If, upon running the pipeline there is no output after the initial setup and after running ```iftop -i [port-to-GReX]``` there doesn't appear to be any data flowing between the GReX and the server it might be the case that the switch in the GReX was not configured correctly.
 
 To fix this you need to access the GReX switch GUI, which if you are physically at the server is accessible in a web browser at ```192.168.88.1```, or if you are accessing the server remotely you must first forward that IP's port 80 to your local computer at some unused, non-privaleged port (such as 8080). This is detailed in the [operation](https://grex-telescope.github.io/software/operation/) page on the GReX website. the command is
 ```sh
 ssh -L 8080:192.168.88.1:80 username@grex-server-address
 ```
 
-Then go to localhost:8080 in a web browser and enter the switch's control panel. If it looks like this, with the Actual MTU columns being 9000 and L2 MTU being 9216 then the switch is configured correctly
+Then go to localhost:8080 in a web browser and enter the switch's configuration panel. If it looks like this, with the Actual MTU columns being 9000 and L2 MTU being 9216 then the switch is configured correctly.
 
+![The switch configuration panel showing the elements of the MTU columns being 9000 and L2 MTU being 9216](https://raw.githubusercontent.com/ismisebrendan/GReX_Birr_setup/main/Images/Correct_MTU.png)
+
+If however, it looks something like the below image then it is configured incorrectly.
+
+![The switch configuration panel showing the elements of the MTU columns being 1500 and L2 MTU being 1592](https://raw.githubusercontent.com/ismisebrendan/GReX_Birr_setup/main/Images/Incorrect_MTU.png)
+
+These settings can be changed by clicking on the name of the port, which should bring you into a configuration page and allow you to change the values of Actual MTU  and L2 MTU.
+
+![The port configuration panel with red boxes highlighting the Actual MTU and L2 MTU inputs](https://raw.githubusercontent.com/ismisebrendan/GReX_Birr_setup/main/Images/Port_Configuration.png)
 
 
 
