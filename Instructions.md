@@ -10,6 +10,10 @@ Sometimes you will need to reboot to apply updates you make.
 
 Also, you should, of course have root priveliges to carry out these steps.
 
+[File_structure.md](https://github.com/ismisebrendan/GReX_Birr_setup/blob/main/File_structure.md) details the necessary file structure for the server.
+
+There are a few times where I mention to add lines to the ```.bashrc``` file in this document, [Lines_to_add_to_bashrc.md](https://github.com/ismisebrendan/GReX_Birr_setup/blob/main/Lines_to_add_to_bashrc.md) has all of these in the one place for ease.
+
 ## OS Setup
 This ran without issues, you should be able to follow the steps outlined by the GReX team.
 
