@@ -586,4 +586,18 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 . "$HOME/.cargo/env"
 ```
 
+# Required default file structure
+
+By default data is saved to ```/hdd/data/```.
+
+Within ```/hdd/data/``` there should be the file ```candidates.db``` and the directories:
+ - ```filterbanks/```
+ - ```voltages/```
+ - ```candidates/```
+ - ```candidates/T2/```
+
+```candidates.db``` can be created empty, the pipeline will fill it automatically.
+
+
+
 
