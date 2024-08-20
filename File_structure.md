@@ -13,3 +13,6 @@ Within ```/hdd/data/``` there should be the file ```candidates.db``` and the dir
 
 ## Injected pulses
 The default directory that the pipeline looks for pulses to inject is ```path/to/pipeline/script/fake/```. It takes ```.dat``` files as the input for the injected pulses.
+
+## Pipeline settings
+A ```.env``` file in the same directory as the pipeline script (```grex.sh```) can be used to set consistent parameters for the pipeline.
