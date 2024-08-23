@@ -552,6 +552,12 @@ with the appropriate paths for your set-up (although it is probably easiest if y
 
 Then copy the files ```~/grex/t3/GReX-T3/services/cand_plotter.service``` and ```~/grex/t3/GReX-T3/services/clear_disks.service``` to ```/etc/systemd/system/``` and in them change the lines pointing to directories to correspond to your own system.
 
+Within ```~/grex/t3/GReX-T3``` run
+
+```sh
+poetry install
+```
+
 
 The pipeline can be run by running ```~/grex/pipeline/grex.sh```.
 
