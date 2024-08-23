@@ -1,4 +1,4 @@
-# Instructions
+# Setup Instructions
 
 Slightly ammended instructions from what is detailed by the GReX team [here](https://grex-telescope.github.io/software/server_setup/).
 
@@ -547,6 +547,15 @@ mon_dir = "/hdd/data/voltages/" # monitoring dir
 dir_plot = "/hdd/data/candidates/T3/candplots/" # place to save output plots
 dir_fil  = "/hdd/data/candidates/T3/candfils/"  # place to save output filterbank files
 ```
+
+Also modify ```T3_manager.py``` and replace
+
+```sh
+FILPATH = '/home/liam/grexdata/'
+OUTPUT_PATH = '/home/liam/grexdata/output'
+```
+
+with the appropriate paths.
 
 with the appropriate paths for your set-up (although it is probably easiest if you leave the third to fifth lines here as they are.
 
