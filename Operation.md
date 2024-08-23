@@ -1,4 +1,5 @@
 # Running the pipeline
+To automatically generate plots of candidates run ```sudo systemctl start cand_plotter.service``` first.
 
 The pipline can be run by running ```~/grex/pipeline/grex.sh```.
 
@@ -41,4 +42,7 @@ or by running ```exit``` instside the session.
 ## Injecting pulses
 
 If you do wish to inject fake pulses [this](https://grex-telescope.github.io/software/operation/) page has instructions on how to do so.
+
+## Plotting data
+If you wish to plot the data separately to the automatic you can use the files [here](https://github.com/ismisebrendan/GReX_Birr_setup/tree/main/Processing).
 
