@@ -37,3 +37,8 @@ tmux kill-session -t [NAME]
 ```
 
 or by running ```exit``` instside the session.
+
+## Injecting pulses
+
+If you do wish to inject fake pulses [this](https://grex-telescope.github.io/software/operation/) page has instructions on how to do so.
+
