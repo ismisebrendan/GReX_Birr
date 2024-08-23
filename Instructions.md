@@ -536,6 +536,7 @@ The pipline can be run by running ```~/grex/pipeline/grex.sh```.
 
 See [Operation.md](https://github.com/ismisebrendan/GReX_setup/new/main) for information on how to run the pipeline.
 
+A ```.env``` file in the same directory as ```grex.sh``` can be used to define settings for the pipeline preventing the need to constantly define the settings each time the pipeline is run.
 
 ## Databases and Metrics Collection
 ### Docker
