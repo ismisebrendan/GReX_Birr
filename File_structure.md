@@ -8,6 +8,7 @@ Within ```/hdd/data/``` there should be the file ```candidates.db``` and the dir
  - ```voltages/```
  - ```candidates/```
  - ```candidates/T2/```
+ - ```candidates/T3/```
 
 ```candidates.db``` can be created empty, the pipeline will fill it automatically.
 
