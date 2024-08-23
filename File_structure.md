@@ -9,6 +9,8 @@ Within ```/hdd/data/``` there should be the file ```candidates.db``` and the dir
  - ```candidates/```
  - ```candidates/T2/```
  - ```candidates/T3/```
+ - ```candidates/T3/candplots```
+ - ```candidates/T3/candfils```
 
 ```candidates.db``` can be created empty, the pipeline will fill it automatically.
 
