@@ -11,4 +11,6 @@ This mostly follows the instructions set out [here](https://grex-telescope.githu
 
 [Operation.md](https://github.com/ismisebrendan/GReX_Birr/blob/main/Operation.md) details the operation of the telescope.
 
+[Server_details.md](https://github.com/ismisebrendan/GReX_Birr/blob/main/Server_details.md) has the details of the server.
+
 Thank you to David McKenna and Joe McCauley for helping me with this and debugging the many many errors that I ran into.
