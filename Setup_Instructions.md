@@ -537,6 +537,20 @@ See [Operation.md](https://github.com/ismisebrendan/GReX_setup/new/main) for inf
 
 A ```.env``` file in the same directory as ```grex.sh``` can be used to define settings for the pipeline preventing the need to constantly define the settings each time the pipeline is run.
 
+### Automatic candidate plotting
+
+In ```~/grex/``` make a new directory ```t3/``` and in here run
+
+```sh
+git clone https://github.com/GReX-Telescope/GReX-T3
+```
+
+In ```GReX-T3``` run
+
+```sh
+poetry install
+```
+
 ## Databases and Metrics Collection
 ### Docker
 Install Docker as detailed [here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). We used the ```apt``` method, however there are other methods.
