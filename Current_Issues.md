@@ -27,9 +27,7 @@ FILPATH = '/home/liam/grexdata/'
 OUTPUT_PATH = '/home/liam/grexdata/output'
 ```
 
-with the appropriate paths for the local system.
-
-with the appropriate paths for your set-up (although it is probably easiest if you leave the third to fifth lines here as they are.
+with the appropriate paths for your set-up (although it is probably easiest if you leave the third to fifth lines in the first block as they are).
 
 Then copy the files ```~/grex/t3/GReX-T3/services/cand_plotter.service``` and ```~/grex/t3/GReX-T3/services/clear_disks.service``` to ```/etc/systemd/system/``` and in them change the lines pointing to directories to correspond to your own system.
 
