@@ -3,7 +3,7 @@ To automatically generate plots of candidates run ```sudo systemctl start cand_p
 
 The pipline can be run by running ```~/grex/pipeline/grex.sh```.
 
-To run the pipeline software there must be a database file for it to use. By default this is in ```/hdd/data/candidates.db``` but can be set with flags when running ```./grex.sh```. The flags are ```-dbp``` or ```--db_path``` (they are equivalent).
+To run the pipeline software there must be a database file for it to use (it can be empty it just needs to exist). By default this is in ```/hdd/data/candidates.db``` but can be set with flags when running ```./grex.sh```. The flags are ```-dbp``` or ```--db_path``` (they are equivalent).
 
 More flags can be see by running ```./grex.sh -h```.
 
