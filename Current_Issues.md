@@ -27,7 +27,7 @@ FILPATH = '/home/liam/grexdata/'
 OUTPUT_PATH = '/home/liam/grexdata/output'
 ```
 
-with the appropriate paths.
+with the appropriate paths for the local system.
 
 with the appropriate paths for your set-up (although it is probably easiest if you leave the third to fifth lines here as they are.
 
