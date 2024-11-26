@@ -1,5 +1,5 @@
 # Running the pipeline
-To automatically generate plots of candidates run ```sudo systemctl start cand_plotter.service``` first.
+To automatically generate plots of candidates run ```sudo systemctl start cand_plotter.service``` first.  **Not sure if this works yet**
 
 The pipline can be run by running ```~/grex/pipeline/grex.sh```.
 
